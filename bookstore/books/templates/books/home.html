@@ -39,8 +39,12 @@
         <a href="/accounts/register/">
             <button class="register-btn">Register</button>
         </a>
-        {% endif %}
 
+        
+        {% endif %}
+        <a href="{% url 'cart' %}">
+            <button class="cart-button">🛒 Cart</button>
+        </a>
     </div>
 
 </nav>
@@ -68,6 +72,10 @@
 
         <a href="/book/{{ book.id }}/">
             <button>View Details</button>
+        </a>
+
+        <a href="{% url 'add_to_cart' book.id %}">
+            <button>Add to Cart</button>
         </a>
 
     </div>
@@ -100,6 +108,10 @@
 
         <a href="{% url 'book_detail' book.id %}">
             <button>View Details</button>
+        </a>
+
+        <a href="{% url 'add_to_cart' book.id %}">
+            <button>Add to Cart</button>
         </a>
 
         
