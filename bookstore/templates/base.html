@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Book Store</title>
+
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include 'messages.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

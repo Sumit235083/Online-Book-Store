@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'books/css/home.css' %}">
+
+<h1 class="main-heading">
+    Category: {{ category }}
+</h1>
+
+<!-- Books Container -->
+<div class="book-container">
+
+    {% for book in books %}
+
+    <div class="book-card">
+
+        <!-- Book Image -->
+        <img src="{{ book.image.url }}" alt="{{ book.title }}">
+
+        <!-- Book Details -->
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.author }}</p>
+        <p>{{ book.category }}</p>
+        <p>₹ {{ book.price }}</p>
+
+        <!-- Actions -->
+        <a href="{% url 'book_detail' book.id %}">
+            <button>View Details</button>
+        </a>
+
+        
+
+    </div>
+
+    {% empty %}
+
+    <p>No books found in this category.</p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
